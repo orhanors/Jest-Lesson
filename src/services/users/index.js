@@ -35,6 +35,7 @@ router.post("/login", async (req, res, next) => {
 		const token = await generateJWT({ _id: user._id });
 		return res.status(200).send({ token });
 	} catch (error) {
+		console.log("test");
 		next(error);
 	}
 });
