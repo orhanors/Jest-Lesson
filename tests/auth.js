@@ -22,8 +22,6 @@ exports.registerTest = () =>
 			password: "incorrectPassword",
 		};
 
-		const validToken = "VALID_TOKEN";
-
 		it("should return an id from a /users/register endpoint when provided with valid credentials", async () => {
 			const response = await request
 				.post("/users/register")

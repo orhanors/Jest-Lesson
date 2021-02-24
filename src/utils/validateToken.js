@@ -4,7 +4,7 @@ const UserModel = require("../services/users/schema");
 const validateToken = async (req, res, next) => {
 	try {
 		const token = req.header("Authorization").replace("Bearer ", "");
-		console.log("req.header is: ", req.header("Authorization"));
+
 		const decoded = await verifyJWT(token);
 		const user = await UserModel.findOne({
 			_id: decoded._id,
